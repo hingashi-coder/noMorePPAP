@@ -9,6 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.8.1",
+    "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.4.4",
+    "@mui/lab": "^5.0.0-alpha.71",
+    "@mui/material": "^5.4.4",
+    "@types/crypto-js": "^4.1.1",
+    "base64url": "^3.0.1",
+    "cryptico": "^1.0.2",
+    "crypto": "^1.0.1",
+    "crypto-js": "^4.1.1",
     "next": "12.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2"
