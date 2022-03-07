@@ -1,10 +1,9 @@
 import type {NextPage} from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 import LockIcon from '@mui/icons-material/Lock';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
-import {Button, Card, CardActions, CardContent, Link, Typography} from "@mui/material";
+import {Button, Card, CardActions, CardContent, Link, Stack, Typography} from "@mui/material";
 import {Box} from "@mui/system";
 import SvgIcon from '@mui/material/SvgIcon';
 
@@ -16,14 +15,15 @@ const LinkItem = (props: {
   icon: typeof SvgIcon
 }) => {
   return (
-    <Card sx={{ minWidth: 275 }} variant="outlined">
+    <Card sx={{minWidth: 180}} variant="outlined">
       <CardContent>
-        <Typography sx={{ fontSize: 20 }} gutterBottom>
-          {props.title} <props.icon/>
+        <Typography sx={{fontSize: 20}} gutterBottom>
+          {props.title}
+          <props.icon/>
         </Typography>
         <Typography variant="h5" component="div">
         </Typography>
-        <Typography sx={{ mb: 1.5 }} color="text.secondary">
+        <Typography sx={{mb: 1.5}} color="text.secondary">
           {props.en}
         </Typography>
         <Typography variant="body2">
@@ -64,16 +64,15 @@ const Home: NextPage = () => {
         </Box>
 
 
-        <Box sx={{
-          display: "flex",
+        <Stack direction={{xs: 'column', sm: 'row'}} spacing={2} justifyContent="center" sx={{
           maxWidth: 1000,
-          justifyContent: "space-evenly",
-          margin: "0 auto"
+          margin: "0 auto",
+
         }}>
           <LinkItem en="Encrypt File" jp="ファイルを暗号化する" href={"/encrypt"} title={"暗号化"} icon={LockIcon}/>
           <LinkItem en="Decrypt File" jp="ファイルを複号化する" href={"/decrypt"} title={"複号化"} icon={LockOpenIcon}/>
           <LinkItem en="Start Here!" jp="初めての方はこちら" href={"/keygen"} title={"暗号化キー生成"} icon={RocketLaunchIcon}/>
-        </Box>
+        </Stack>
       </main>
 
     </div>
